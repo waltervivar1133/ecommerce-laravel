@@ -3,8 +3,12 @@
     <div class="container py-8">
         @foreach ($categories as $category)
             <section class="mb-6">
-                <h1 class="text-lg uppercase font-semibold text-gray-700">{{ $category->name }}</h1>
-
+                <div class="flex items-center gap-3 ">
+                    <h1 class="text-lg uppercase font-semibold text-gray-700">{{ $category->name }}</h1>
+                    <a href="{{ route('categories.show', $category) }}"
+                        class="text-orange-500 hover:underline cursor-pointer font-semibold hover:text-orange-400">Ver
+                        más</a>
+                </div>
                 @livewire('category-products', ['category' => $category])
             </section>
         @endforeach
