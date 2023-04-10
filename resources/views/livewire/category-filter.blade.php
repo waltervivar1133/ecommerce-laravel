@@ -44,7 +44,8 @@
                                 </figure>
                                 <div class="py-4 px-6">
                                     <h1 class="text-lg font-semibold">
-                                        <a href="">{{ Str::limit($product->name, 15) }}</a>
+                                        <a
+                                            href="{{ route('products.show', $product) }}">{{ Str::limit($product->name, 15) }}</a>
                                     </h1>
                                     <p class="font-bold text-trueGray-700">{{ $product->price }}</p>
                                 </div>
@@ -65,7 +66,10 @@
                                 <div class="flex-1 py-4 px-6 flex flex-col justify-between">
                                     <div class="flex justify-between">
                                         <div>
-                                            <h1 class="font-semibold text-gray-700 text-lg">{{ $product->name }}</h1>
+                                            <a href="{{ route('products.show', $product) }}">
+                                                <h1 class="font-semibold text-gray-700 text-lg">{{ $product->name }}
+                                                </h1>
+                                            </a>
                                             <p class="font-bold text-gray-700">S/ {{ $product->price }}</p>
                                         </div>
                                         <div class="flex gap-1 ">
@@ -82,7 +86,8 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <x-jet-danger-button>Mas informacion</x-jet-danger-button>
+                                        <x-jet-danger-button> <a href="{{ route('products.show', $product) }}">Mas
+                                                informacion</a> </x-jet-danger-button>
                                     </div>
                                 </div>
                             </article>
