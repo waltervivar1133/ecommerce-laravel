@@ -36,7 +36,7 @@
     <script src="{{ asset('vendor/flex-slider/jquery.flexslider-min.js') }}"></script>
 
     <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
-    <script src="{{ mix('js/app.js') }}"></script>
+
 </head>
 
 <body class="font-sans antialiased">
@@ -56,7 +56,7 @@
     @livewireScripts
 
     @stack('script')
-
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>

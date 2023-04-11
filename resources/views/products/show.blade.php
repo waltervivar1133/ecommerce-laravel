@@ -11,7 +11,6 @@
                             </li>
                         @endforeach
 
-
                     </ul>
                 </div>
             </div>
@@ -33,10 +32,17 @@
                         </span>
                         <div>
                             <p class="text-lg font-semibold text-greenLime-600">Se hace envios a todo el Perú</p>
-                            <p>Recibelo el {{ Date::now()->addDay(7)->locale('es')->format('l j F')}}</p>
+                            <p>Recibelo el {{ Date::now()->addDay(7)->locale('es')->format('l j F') }}</p>
                         </div>
                     </div>
                 </div>
+                @if ($product->subcategory->size)
+                    @livewire('add-cart-item-size', ['product' => $product])
+                @elseif ($product->subcategory->color)
+                    @livewire('add-cart-item-color', ['product' => $product])
+                @else
+                    @livewire('add-cart-item', ['product' => $product])
+                @endif
             </div>
         </div>
     </div>

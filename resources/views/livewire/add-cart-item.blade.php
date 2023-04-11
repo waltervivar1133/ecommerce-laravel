@@ -1,0 +1,17 @@
+<div x-data>
+    <p class="text-gray-700"> <span class="font-semibold text-lg">Stock disponible: </span>{{ $quantity }}</p>
+    <div class="flex gap-4">
+        <div class="flex gap-3 items-center">
+            <x-jet-secondary-button disabled x-bind:disabled="$wire.qty <= 1" wire:click="decrement"
+                wire:loading.attr="disabled" wire:target="decrement">-
+            </x-jet-secondary-button>
+            <span class="text-gray-700">{{ $qty }}</span>
+            <x-jet-secondary-button wire:click="increment" disabled x-bind:disabled="$wire.qty === $wire.quantity"
+                wire:loading.attr="disabled" wire:target="increment">+</x-jet-secondary-button>
+        </div>
+        <div class="flex-1">
+            <x-jet-button class="w-full bg-orange-600 hover:bg-orange-500 justify-center ">Agregar al carrito de compras
+            </x-jet-button>
+        </div>
+    </div>
+</div>
