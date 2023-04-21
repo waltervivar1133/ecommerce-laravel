@@ -57,7 +57,7 @@
                 <ul class="col-span-1 bg-white ">
                     @foreach ($categories as $category)
                         {{-- Categories --}}
-                        <li class="text-trueGray-500 hover:bg-orange-500 hover:text-white navigation-link">
+                        <li class="text-trueGray-500  hover:bg-orange-600 hover:text-white navigation-link">
                             <a href="{{route('categories.show', $category)}}" class=" py-2 px-4 text-base flex items-center">
                                 <span class="flex justify-center w-9"> {!! $category->icon !!}</span>
                                 {{ $category->name }}</a>
