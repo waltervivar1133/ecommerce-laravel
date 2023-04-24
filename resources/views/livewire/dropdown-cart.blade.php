@@ -16,6 +16,9 @@
                                @isset($item->options['color'])
                                   <p> - Color:{{__($item->options['color'])}}</p>
                                @endisset
+                               @isset($item->options['size'])
+                                  <p> - {{__($item->options['size'])}}</p>
+                               @endisset
                             </div>
                             <p>Precio: {{ $item->price }}</p>
                         </article>

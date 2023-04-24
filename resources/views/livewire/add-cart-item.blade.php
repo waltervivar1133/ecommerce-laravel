@@ -11,6 +11,7 @@
         </div>
         <div class="flex-1">
             <x-jet-button class="w-full bg-orange-600 hover:bg-orange-500 justify-center " wire:click="addItem"
+            x-bind:disabled="$wire.qty > $wire.quantity"
             wire:loading.attr="disabled"
             wire:target="addItem">Agregar al carrito de compras
             </x-jet-button>
