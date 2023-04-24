@@ -20,7 +20,8 @@
             @endforeach
         </select>
     </div>
-
+    <p class="text-gray-700"> <span class="font-semibold text-lg">Stock disponible:
+        </span>{{ $quantity ? $quantity : $product->stock }}</p>
     <div class="flex gap-4">
         <div class="flex gap-3 items-center">
             <x-jet-secondary-button disabled x-bind:disabled="$wire.qty <= 1" wire:click="decrement"
@@ -32,11 +33,8 @@
         </div>
         <div class="flex-1">
             <x-jet-button class="w-full bg-orange-600 hover:bg-orange-500 justify-center "
-            x-bind:disabled=" !$wire.quantity"
-            wire:click="addItem"
-            wire:loading.attr="disabled"
-            wire:target="addItem"
-            >Agregar al carrito de compras
+                x-bind:disabled=" !$wire.quantity" wire:click="addItem" wire:loading.attr="disabled"
+                wire:target="addItem">Agregar al carrito de compras
             </x-jet-button>
         </div>
     </div>

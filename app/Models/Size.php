@@ -13,7 +13,7 @@ class Size extends Model
 
     // relacion uno a  muchos inversa
 
-    public function products(){
+    public function product(){
         return $this->belongsTo(Product::class);
     }
 

@@ -7,7 +7,8 @@
             <option value="{{ $color->id }}">{{ __($color->name) }}</option>
         @endforeach
     </select>
-    <p class="text-gray-700"> <span class="font-semibold text-lg">Stock disponible: </span>{{ $quantity }}</p>
+    <p class="text-gray-700"> <span class="font-semibold text-lg">Stock disponible: </span>
+        {{ $quantity ? $quantity : $product->stock }}</p>
     <div class="flex gap-4 my-4">
         <div class="flex gap-3 items-center">
             <x-jet-secondary-button disabled x-bind:disabled="$wire.qty <= 1" wire:click="decrement"

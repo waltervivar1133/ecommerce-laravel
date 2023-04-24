@@ -1,5 +1,5 @@
 <div x-data>
-    <p class="text-gray-700"> <span class="font-semibold text-lg">Stock disponible: </span>{{ $quantity }}</p>
+    <p class="text-gray-700"> <span class="font-semibold text-lg">Stock disponible: </span>{{ $product->stock }}</p>
     <div class="flex gap-4">
         <div class="flex gap-3 items-center">
             <x-jet-secondary-button disabled x-bind:disabled="$wire.qty <= 1" wire:click="decrement"
