@@ -38,7 +38,7 @@
             <x-jet-application-mark class="block h-9 w-auto text-orange-600" />
         </a>
 
-        <div class="flex-1 hidden md:flex">
+        <div class="flex-1 hidden md:block">
             @livewire('search')
         </div>
 
