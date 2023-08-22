@@ -13,12 +13,12 @@
                             <h1 class="font-bold">{{ $item->name }}</h1>
                             <div class="flex gap-1">
                                 <p>Cant:{{ $item->qty }}</p>
-                               @isset($item->options['color'])
-                                  <p> - Color:{{__($item->options['color'])}}</p>
-                               @endisset
-                               @isset($item->options['size'])
-                                  <p> - {{__($item->options['size'])}}</p>
-                               @endisset
+                                @isset($item->options['color'])
+                                    <p> - Color:{{ __($item->options['color']) }}</p>
+                                @endisset
+                                @isset($item->options['size'])
+                                    <p> - {{ __($item->options['size']) }}</p>
+                                @endisset
                             </div>
                             <p>Precio: {{ $item->price }}</p>
                         </article>
@@ -37,9 +37,11 @@
 
             @if (Cart::count())
                 <div class="p-2 ">
-                    <p class="text-lg text-red-600 font-extrabold mb-3"> <span class="font-bold text-gray-800">Total: </span>
+                    <p class="text-lg text-red-600 font-extrabold mb-3"> <span class="font-bold text-gray-800">Total:
+                        </span>
                         S/ {{ Cart::subtotal() }}</p>
-                    <x-button-enlace color="orange" class="w-full mx-0 p-2">Ir al carrito de compras
+                    <x-button-enlace href="{{ route('shopping-cart') }}" color="orange" class="w-full mx-0 p-2">Ir al
+                        carrito de compras
                     </x-button-enlace>
                 </div>
             @endif

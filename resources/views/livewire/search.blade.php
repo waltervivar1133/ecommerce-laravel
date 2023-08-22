@@ -1,6 +1,6 @@
 <div class="flex-1 relative ">
-    <form action="" class="flex justify-center items-center">
-        <x-jet-input wire:model="search" type="text" class="  flex w-full border-0 rounded-r-none"
+    <form action="{{ route('search') }}" class="flex justify-center items-center">
+        <x-jet-input name="name" wire:model="search" type="text" class="  flex w-full border-0 rounded-r-none"
             placeholder="¿Estas buscando algun producto?" />
         <button class="bg-orange-600 w-100 py-1 px-3  rounded-r-md ">
             <x-search />
